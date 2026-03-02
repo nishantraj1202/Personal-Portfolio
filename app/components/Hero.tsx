@@ -25,7 +25,7 @@ export default function Hero() {
                         {/* Profile Info Left */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
                             <Image
-                                src="/profile.png"
+                                src="/image.png"
                                 alt="Nishant Raj Jha"
                                 width={64}
                                 height={64}
