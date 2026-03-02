@@ -14,7 +14,7 @@ export default function Hero() {
         <section id="hero" style={{ paddingTop: '64px', paddingBottom: '0px' }}>
             <div className="container">
                 <FadeIn>
-                    <div style={{
+                    <div className="hero-header" style={{
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'space-between',
@@ -30,6 +30,7 @@ export default function Hero() {
                                 width={64}
                                 height={64}
                                 priority
+                                className="hero-profile-img"
                                 style={{
                                     width: '64px',
                                     height: '64px',
@@ -38,7 +39,7 @@ export default function Hero() {
                                 }}
                             />
                             <div>
-                                <h1 style={{
+                                <h1 className="hero-name" style={{
                                     fontSize: '20px',
                                     fontWeight: '600',
                                     color: 'var(--text)',
@@ -68,7 +69,7 @@ export default function Hero() {
                     </div>
 
                     {/* Bio */}
-                    <p style={{
+                    <p className="hero-bio" style={{
                         fontSize: '15px',
                         color: 'var(--text-muted)',
                         lineHeight: '1.7',
@@ -83,11 +84,11 @@ export default function Hero() {
                             <Mail size={15} />
                             Get in Touch
                         </button>
-                        <a href="https://github.com/NishantRaj29" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                        <a href="https://github.com/nishantraj1202" target="_blank" rel="noopener noreferrer" className="btn-outline">
                             <SiGithub size={15} />
                             GitHub
                         </a>
-                        <a href="https://www.linkedin.com/in/nishant-raj-jha/" target="_blank" rel="noopener noreferrer" className="btn-outline">
+                        <a href="https://www.linkedin.com/in/nishant-raj-742105295/" target="_blank" rel="noopener noreferrer" className="btn-outline">
                             <SiLinkedin size={15} />
                             LinkedIn
                         </a>

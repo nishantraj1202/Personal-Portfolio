@@ -11,7 +11,7 @@ export default function Education() {
                     </h2>
                 </FadeIn>
                 <FadeIn>
-                    <div style={{
+                    <div className="edu-row" style={{
                         display: 'flex',
                         alignItems: 'center',
                         gap: '20px',
@@ -33,6 +33,7 @@ export default function Education() {
                                 alt="NIT Jalandhar"
                                 width={64}
                                 height={64}
+                                className="edu-logo"
                                 style={{ objectFit: 'cover', width: '64px', height: '64px' }}
                             />
                         </div>
