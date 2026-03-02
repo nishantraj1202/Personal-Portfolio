@@ -1,0 +1,564 @@
+/* ═══════════════════════════════════════
+   MINIMALIST DESIGN SYSTEM (nischal.site inspired)
+   ═══════════════════════════════════════ */
+
+:root {
+    --bg: #FFFFFF;
+    --surface: #FFFFFF;
+    --text: #000000;
+    --text-muted: #525252;
+    --border: #E5E5E5;
+    --accent: #F5F5F5;
+    --radius: 6px;
+}
+
+.dark {
+    --bg: #000000;
+    --surface: #0A0A0A;
+    --text: #E0E0E0;
+    --text-muted: #D4D4D4;
+    --border: #404040;
+    --accent: #171717;
+}
+
+/* ═══ RESET & BASE ═══ */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-outfit), 'Outfit Variable', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ═══ LAYOUT ═══ */
+.container {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 32px 0;
+}
+
+/* ═══ TYPOGRAPHY ═══ */
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title .hashtag {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+/* ═══ COMPONENTS ═══ */
+.bordered-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    background: var(--surface);
+    transition: border-color 0.3s ease;
+}
+
+/* Tech Stack Pill Badge */
+.tech-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--surface);
+    white-space: nowrap;
+    cursor: default;
+    transition: transform 0.25s cubic-bezier(.4, 2, .6, 1), box-shadow 0.25s ease;
+}
+
+.tech-pill:hover {
+    transform: rotate(-3deg) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dark .tech-pill:hover {
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.06);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.btn-black {
+    background-color: var(--text);
+    color: var(--bg);
+    padding: 6px 16px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
+    border: 1px solid var(--text);
+}
+
+.btn-black:hover {
+    opacity: 0.8;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 16px;
+    border-radius: var(--radius);
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: background-color 0.2s;
+}
+
+.btn-outline:hover {
+    background-color: var(--accent);
+}
+
+.nav-link {
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: var(--text);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+    background: var(--accent);
+}
+
+/* ═══ CONTACT POPUP ═══ */
+.contact-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+    z-index: 100;
+}
+
+.contact-fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-popup {
+    position: fixed;
+    bottom: 84px;
+    right: 24px;
+    width: 340px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    z-index: 101;
+    overflow: hidden;
+    animation: popupSlideIn 0.25s ease;
+}
+
+.dark .contact-popup {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes popupSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-popup-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+.contact-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-close:hover {
+    color: var(--text);
+}
+
+.contact-form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.contact-input,
+.contact-textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+    margin-bottom: 8px;
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+    color: var(--text-muted);
+    opacity: 0.6;
+}
+
+.contact-input:focus,
+.contact-textarea:focus {
+    border-color: var(--text-muted);
+}
+
+.contact-textarea {
+    resize: vertical;
+    min-height: 72px;
+}
+
+.contact-submit {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--radius);
+    background: var(--text);
+    color: var(--bg);
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    margin-top: 4px;
+}
+
+.contact-submit:hover {
+    opacity: 0.85;
+}
+
+/* ═══ FADE-IN ANIMATION ═══ */
+.fade-in {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ═══ EXPERIENCE TIMELINE ═══ */
+.exp-timeline {
+    position: relative;
+    padding-left: 28px;
+}
+
+/* Vertical line */
+.exp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: var(--border);
+}
+
+/* Each step */
+.exp-step {
+    position: relative;
+    padding-bottom: 28px;
+}
+
+.exp-step:last-child {
+    padding-bottom: 0;
+}
+
+/* Dot on the line */
+.exp-dot {
+    position: absolute;
+    left: -28px;
+    top: 6px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--text-muted);
+    z-index: 1;
+}
+
+.exp-date {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    letter-spacing: 0.5px;
+}
+
+/* ═══ RESPONSIVE ═══ */
+
+/* Tablet and below */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    section {
+        padding: 24px 0;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    .bordered-card {
+        padding: 20px;
+    }
+}
+
+/* Small tablet / large phone */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    #hero {
+        padding-top: 40px !important;
+    }
+
+    .section-title {
+        font-size: 17px;
+        margin-bottom: 12px;
+    }
+
+    .bordered-card {
+        padding: 16px;
+    }
+
+    .tech-pill {
+        padding: 5px 12px;
+        font-size: 13px;
+        gap: 6px;
+    }
+
+    .btn-black,
+    .btn-outline {
+        padding: 6px 14px;
+        font-size: 13px;
+    }
+
+    .badge {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    /* Hero header stacking */
+    .hero-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 16px;
+    }
+
+    .hero-profile-img {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    .hero-name {
+        font-size: 18px !important;
+    }
+
+    .hero-bio {
+        font-size: 14px !important;
+    }
+
+    /* Education row stacking */
+    .edu-row {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 4px;
+    }
+
+    .edu-logo {
+        width: 52px !important;
+        height: 52px !important;
+    }
+
+    /* Contact popup full-width on mobile */
+    .contact-popup {
+        width: calc(100vw - 32px);
+        right: 16px;
+        bottom: 80px;
+    }
+
+    .contact-fab {
+        width: 44px;
+        height: 44px;
+        bottom: 20px;
+        right: 16px;
+    }
+
+    /* Experience timeline */
+    .exp-timeline {
+        padding-left: 24px;
+    }
+
+    .exp-dot {
+        left: -24px;
+        width: 12px;
+        height: 12px;
+    }
+
+    .exp-timeline::before {
+        left: 5px;
+    }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    section {
+        padding: 16px 0;
+    }
+
+    .section-title {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .bordered-card {
+        padding: 14px;
+    }
+
+    .tech-pill {
+        padding: 4px 10px;
+        font-size: 12px;
+    }
+
+    .btn-black,
+    .btn-outline {
+        padding: 5px 12px;
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .contact-popup {
+        width: calc(100vw - 24px);
+        right: 12px;
+    }
+
+    .contact-fab {
+        bottom: 16px;
+        right: 12px;
+    }
+}
