@@ -53,7 +53,7 @@ export default function Experience() {
             <div className="container">
                 <FadeIn>
                     <h2 className="section-title">
-                        Experiences <span className="hashtag">#</span>
+                        Experiences and Extra-Curriculars <span className="hashtag">#</span>
                     </h2>
                 </FadeIn>
 

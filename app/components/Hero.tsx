@@ -75,7 +75,7 @@ export default function Hero() {
                         lineHeight: '1.7',
                         marginBottom: '20px',
                     }}>
-                        I build products that solve real problems — from AI-powered platforms to cross-platform apps. Moving 10× faster with a security-first mindset and a passion for clean, seamless user experiences.
+                        I build products that solve real problems -- from AI-powered platforms to cross-platform apps. Moving 10× faster with a security-first mindset and a passion for clean, seamless user experiences.
                     </p>
 
                     {/* Action buttons row */}
